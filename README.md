@@ -1,13 +1,13 @@
 # ng-holder
 
-An AngularJS directive for HolderJS.
+An AngularJS directive for [HolderJS](https://github.com/imsky/holder).
 
 ## Usage
 
 Install with bower:
 
 ```bash
-npm install angular-holderjs --save
+bower install angular-holderjs --save
 ```
 
 Add as a dependency in your Angular app:
