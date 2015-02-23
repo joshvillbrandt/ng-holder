@@ -7,7 +7,7 @@ An AngularJS directive for [HolderJS](https://github.com/imsky/holder).
 Install with bower:
 
 ```bash
-bower install angular-holderjs --save
+bower install holderjs angular-holderjs --save
 ```
 
 Add as a dependency in your Angular app:
@@ -27,6 +27,10 @@ Use directive one of two ways:
 
 ## Change History
 
-### v1.0.0
+### v1.0.1 - 2014/02/23
+
+* Remove dependency on `holderjs` and install it separately in application
+
+### v1.0.0 - 2014/02/23
 
 * Initial release
