@@ -1,17 +1,27 @@
-(function(window, angular, undefined) {
-'use strict';
+/* global
+ Holder:false
+ */
+(function (window, angular, undefined) {
+    'use strict';
 
-var module = angular.module('ngHolder', []);
+    var module = angular.module('ngHolder', []);
 
-module.directive('holder', [
-  function() {
-    return {
-      link: function(scope, element, attrs) {
-        if(attrs.holder)
-          attrs.$set('data-src', attrs.holder);
-        Holder.run({images:element[0]});
-      }
-    };
-  }]);
+    module.directive('holder', ['$timeout',
+        function ($timeout) {
+            return {
+                link: function ($scope, $element, $attrs) {
+
+                    $timeout(function () {
+                        Holder.run($element);
+
+                        if ($attrs.holderWatch !== undefined) {
+                            $attrs.$observe('src', function () {
+                                Holder.run($element);
+                            });
+                        }
+                    });
+                }
+            };
+        }]);
 
 })(window, window.angular);
