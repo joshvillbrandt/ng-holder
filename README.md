@@ -14,16 +14,21 @@ Add as a dependency in your Angular app:
 
 ```javascript
 var app = angular.module('app', [
-  'ngHolder',
+  'ngHolder'
 ]);
 ```
 
-Use directive one of two ways:
+Use directive:
 
 ```html
-<img holder="holder.js/200x200/text:?">
-<img holder data-src="holder.js/200x200/text:?">
+<img holder data-src="holder.js/200x200?text=?">
 ```
+
+Optionally enable watch on `data-src`
+```html
+<img holder holder-watch data-src="holder.js/{{x}}x{{y}}?text={{text}}">
+```
+
 
 ## Change History
 
